@@ -1,2 +1,8 @@
 language: csharp
 solution: Nexmo.Api.sln
+install:
+  - nuget restore Nexmo.Api.sln
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+script:
+  - dotnet msbuild /p:Configuration=Release Nexmo.Api.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Nexmo.Api.Test.Unit/*.cs
