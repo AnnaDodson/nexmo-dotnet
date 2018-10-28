@@ -5,4 +5,4 @@ install:
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 script:
   - dotnet msbuild /p:Configuration=Release Nexmo.Api.sln
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Nexmo.Api.Test.Unit/*.cs
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./Nexmo.Api.Test.Unit/bin/Release/*/Nexmo.Api.Test.Unit.dll
